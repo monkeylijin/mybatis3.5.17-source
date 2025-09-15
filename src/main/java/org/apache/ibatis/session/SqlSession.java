@@ -41,7 +41,7 @@ public interface SqlSession extends Closeable {
    *
    * @return Mapped object
    */
-  <T> T selectOne(String statement);
+  <T> T selectOne(String statement); // 查询单个对象
 
   /**
    * Retrieve a single row mapped from the statement key and parameter.
@@ -55,7 +55,7 @@ public interface SqlSession extends Closeable {
    *
    * @return Mapped object
    */
-  <T> T selectOne(String statement, Object parameter);
+  <T> T selectOne(String statement, Object parameter); // 查询单个对象
 
   /**
    * Retrieve a list of mapped objects from the statement key.
@@ -67,7 +67,7 @@ public interface SqlSession extends Closeable {
    *
    * @return List of mapped object
    */
-  <E> List<E> selectList(String statement);
+  <E> List<E> selectList(String statement); // 查询多个对象
 
   /**
    * Retrieve a list of mapped objects from the statement key and parameter.
@@ -81,7 +81,7 @@ public interface SqlSession extends Closeable {
    *
    * @return List of mapped object
    */
-  <E> List<E> selectList(String statement, Object parameter);
+  <E> List<E> selectList(String statement, Object parameter); // 查询多个对象
 
   /**
    * Retrieve a list of mapped objects from the statement key and parameter, within the specified row bounds.
@@ -97,7 +97,7 @@ public interface SqlSession extends Closeable {
    *
    * @return List of mapped object
    */
-  <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds);
+  <E> List<E> selectList(String statement, Object parameter, RowBounds rowBounds); // 查询多个对象
 
   /**
    * The selectMap is a special case in that it is designed to convert a list of results into a Map based on one of the
@@ -306,7 +306,7 @@ public interface SqlSession extends Closeable {
    * Flushes batch statements and commits database connection. Note that database connection will not be committed if no
    * updates/deletes/inserts were called. To force the commit call {@link SqlSession#commit(boolean)}
    */
-  void commit();
+  void commit(); // 提交事务
 
   /**
    * Flushes batch statements and commits database connection.
@@ -314,14 +314,14 @@ public interface SqlSession extends Closeable {
    * @param force
    *          forces connection commit
    */
-  void commit(boolean force);
+  void commit(boolean force); // 提交事务
 
   /**
    * Discards pending batch statements and rolls database connection back. Note that database connection will not be
    * rolled back if no updates/deletes/inserts were called. To force the rollback call
    * {@link SqlSession#rollback(boolean)}
    */
-  void rollback();
+  void rollback(); // 回滚事务
 
   /**
    * Discards pending batch statements and rolls database connection back. Note that database connection will not be
@@ -330,7 +330,7 @@ public interface SqlSession extends Closeable {
    * @param force
    *          forces connection rollback
    */
-  void rollback(boolean force);
+  void rollback(boolean force); // 回滚事务
 
   /**
    * Flushes batch statements.
@@ -357,7 +357,7 @@ public interface SqlSession extends Closeable {
    *
    * @return Configuration
    */
-  Configuration getConfiguration();
+  Configuration getConfiguration(); // 获取Configuration配置
 
   /**
    * Retrieves a mapper.
@@ -369,7 +369,7 @@ public interface SqlSession extends Closeable {
    *
    * @return a mapper bound to this SqlSession
    */
-  <T> T getMapper(Class<T> type);
+  <T> T getMapper(Class<T> type); // 获取Mapper
 
   /**
    * Retrieves inner database connection.
